@@ -1,0 +1,68 @@
+...
+20190105
+Python100例 Python3.5版本
+Coder:Hohn.Chan
+...
+
+...
+题目001：有四个数字：1,2,3,4，能组成多少个互不相同且无重复的三位数？各是多少？
+...
+def tm001():
+...
+最简单的for循环和in函数可以完成
+...
+arr = []
+for x in range(1,5):
+    for y in range (1,5):
+        for z in range (1,5):
+            number = [100 * x + 10 * y + z]
+            if x!=y and y!=z and z!=x and number not in arr:#互不相同且无重复数字的三位数
+                arr.append(number)#添加改数字重复循环
+print(len(arr),arr)
+
+...
+题目002：
+企业发放的奖金根据利润(I)的多少来提成：
+低于或等于10万元时，奖金可提10%；
+利润高于10万元，低于20万元时，低于10万元的部分按10%提成，高于10万元的部分，可提成7.5%；
+20万到40万之间时，高于20万元的部分，可提成5%；
+40万到60万之间时高于40万元的部分，可提成3%；
+60万到100万之间时，高于60万元的部分，可提成1.5%；
+高于100万元时，超过100万元的部分按1%提成。
+从键盘输入当月利润I，求应发放奖金总数
+...
+def tm002():
+...
+if...elif...是最简单的
+...
+profit = int(input("请输入净利润："))
+
+if profit < 100000:
+    commission = profit * 0.1
+elif profit > 100000 and profit <= 200000:
+    commission = 10000 + (profit - 100000) * 0.075
+elif profit > 200000 and profit <= 400000:
+    commission = 10000 + 7500 + (profit - 200000) * 0.05
+elif profit > 400000 and profit <= 600000:
+    commission = 22500 + (profit - 400000) * 0.03
+elif profit > 600000 and profit <= 1000000:
+    commission = 28500 + (profit - 600000) * 0.015
+else:
+    commission = 39500 + (profit - 1000000) * 0.01
+print(commission)
+...
+
+def tm002_2():
+...
+数轴分界、定位比elif简单
+...
+net_profit=int(input('净利润:'))
+standard = [1000000, 600000, 400000, 200000, 100000, 0]
+rate = [0.01, 0.015, 0.03, 0.05, 0.075, 0.1]
+bonus = 0
+for i in range(len(standard)):
+    if net_profit > standard[i]:
+        bonus+= (net_profit - standard[i])*rate[i]
+        net_profit = standard[i]
+print(bonus)
+
