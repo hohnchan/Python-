@@ -66,3 +66,46 @@ for i in range(len(standard)):
         net_profit = standard[i]
 print(bonus)
 
+
+...
+题目003：一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少？
+...
+def tm003():
+...
+开方函数求余
+...
+import math
+for i in range(1000):
+    x = math.sqrt(i + 100)
+    y = math.sqrt(i + 100 + 168)
+    if x%1==0 and y%1==0:
+        print(i)
+
+...
+题目4:输入某年某月某日，判断这是这一年的第几天？
+...
+
+
+def tm004():
+...
+Python时间元组
+    tm_year     年
+    tm_mon      月(1~12)
+    tm_mday     日(1~31)
+    tm_hour     时(0~23)
+    tm_min      分(0~59)
+    tm_sec      秒(0~61, 60或61是闰秒)
+    tm_wday     星期(0~6, 0是周一)
+    tm_yday     第几天(1~366, 366是儒略历)
+...
+import time
+date = input('请输入时间（例如2019-04-11）:')
+st = time.strptime(date,'%Y-%m-%d')#时间文本转换为时间元祖#
+num = st.tm_yday
+print(num)
+
+...
+题目005:输入三个整数x,y,z，请把这三个数有小到大输出。
+...
+def tm005():
+
