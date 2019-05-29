@@ -85,7 +85,6 @@ for i in range(1000):
 题目4:输入某年某月某日，判断这是这一年的第几天？
 ...
 
-
 def tm004():
 ...
 Python时间元组
@@ -108,4 +107,28 @@ print(num)
 题目005:输入三个整数x,y,z，请把这三个数有小到大输出。
 ...
 def tm005():
+...
+sorted排序
+...
+print("请输入三个整数x,y,z")
+x = int(input('x='))
+y = int(input('y='))
+z = int(input('z='))
+
+a=(x , y , z)
+b=sorted(a)
+print(b)
+
+...
+题目006：斐波那契数列（0,1,1,2,3,5,8,13...）
+新一项等于前两项的和
+...
+def tm006()
+a = [0,1]
+for i in range(10):
+    a.append(a[-1] + a[-2])
+print(a)
+
+...
+题目007
 
