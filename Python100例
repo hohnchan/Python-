@@ -130,5 +130,56 @@ for i in range(10):
 print(a)
 
 ...
-题目007
+题目007:复制一个表到新的表
+a=b 不会产生新的表，切片才能取新的表
+...
+def tm007()
+a=(1,2,3)
+b= a[:]
+print(b)
 
+
+...
+题目008：输出9.9乘法口诀表
+主要考察操作符的用法
+乘法口诀表输出的是字段，“a*b=c”
+需要字段a,b,分别从列表取值
+%d 十进制，
+%-7s 左对齐，宽度为7
+end= 末尾不换行加空格
+\t横向制表符
+\n自动换行
+...
+def tm008()
+for i in range(1,10):
+    for j in range(1,10):
+            if i<=j:
+                string = '%d*%d=%d'%(i,j,i*j)#乘法表字段#
+                print(string,end='\t')#end='\t'结尾空格#
+    print('\n')#输出结果自动换行#
+    
+...
+题目009：暂停一秒输出
+获取两个时间戳，两个时间戳相减差一秒，即完成了暂停一秒输出
+...
+def tm009()
+import time
+a = time.time()
+time.sleep(1)
+b = time.time()
+print(b-a)
+
+...
+题目010：暂停一秒输出，那格式化当前时间
+取两个时间戳，暂停一秒后，将后一个时间戳格式化
+...
+def tm010()
+import time
+a = time.strftime('%y-%m-%d %H:%M:%S',time.localtime(time.time()))#time.localtime()，#时间戳转换为时间元祖#
+print(a)
+time.sleep(1)
+b =  time.strftime('%y-%m-%d %H:%M:%S',time.localtime(time.time()))#time.strftime(),#时间元祖转换为时间文本#
+print(b)
+
+...
+题目011：
