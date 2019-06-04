@@ -201,7 +201,45 @@ print('%d月后有兔子%d对'%(num,tuzi[-1]))
 
 
 ...
-题目012
+题目012：100到200之间有多少个素数
+素数a只能被1和自己整除，所以不能被2到a-1整除的即为素数
+全部添加到一个空列表，计算列表长度，即为素数数
+...
+for a in range (101,200):
+    for b in range(2,a-1):
+        if a%b == 0:
+            break
+    else:
+        num.append(a)
+print(len(num))
+
 
 ...
+题目013：打印出所有的"水仙花数"
+水仙花数，即一个三位数等于百位数的立方+十位数字的立方加各位数字的立方
+....
+shuixianhua=[]
+for a in range(1,9):
+    for b in range(0,9):
+        for c in range(0,9):
+            num = 100*a + 10*b +c
+            if num == a**3+ b**3+ c**3:
+                shuixianhua.append(num)
+            else:
+                break
+print(shuixianhua)
 
+
+...
+题目014：将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5
+输入一个数，从0开始除，能整除则记录一次，直到除的结果为1
+...
+num = int(input('请输入一个不大于100的整数：'))
+yinshu=[]
+for i in range (2,num):
+    if num%i == 0:
+        yinshu.append(i)
+        num = num/i
+    elif
+        print('数字%d是一个质数'%(num))
+print(yinshu)
